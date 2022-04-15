@@ -31,7 +31,7 @@
   &:hover .category-img {
     filter: none;
     background-size: 320px;
-    transition: all 4s linear;
+    transition: background 4s linear;
   }
 
   &:hover .btn::after {
@@ -42,6 +42,7 @@
 }
 
 .category-img {
+  background: rgb(35, 35, 30);
   min-width: 30%;
   background-size: 300px;
   background-repeat: no-repeat;
@@ -114,7 +115,7 @@
   }
 
   .category-img {
-    background-color: red;
+    background-color: rgb(35, 35, 30);
     min-width: 25%;
     background-size: 300px;
   }
@@ -132,7 +133,7 @@
       grid-column: span 2;
 
       .category-img {
-        background-color: red;
+        background-color: rgb(35, 35, 30);
         min-width: 40%;
         background-size: 370px;
       }
@@ -140,7 +141,6 @@
       &:hover .category-img {
         filter: none;
         background-size: 420px;
-        transition: all 4s linear;
       }
     }
 
@@ -159,7 +159,6 @@
     &:hover .category-img {
       filter: none;
       background-size: 350px;
-      transition: all 4s linear;
     }
   }
 
@@ -178,7 +177,7 @@
   }
 
   .category-img {
-    background-color: red;
+    background-color: rgb(35, 35, 30);
     min-width: 35%;
     background-size: 300px;
   }
