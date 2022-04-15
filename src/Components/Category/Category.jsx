@@ -5,7 +5,11 @@ const Category = ({ title, subtitle, img, description, id }) => {
   if (id === "one" || id === "two") isMainCategory = true;
   return (
     <div className={`category-container ${id}`}>
-      <img className="category-img" src={img} alt={description} />
+      <div
+        className="category-img"
+        alt={description}
+        style={{ backgroundImage: `url(${img})` }}
+      ></div>
       <div className="category-body-container">
         <h2>{title}</h2>
         <p>{subtitle}</p>
