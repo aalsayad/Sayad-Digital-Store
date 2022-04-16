@@ -3,7 +3,7 @@ import "./homevideo.styles.scss";
 const HomeVideo = () => {
   return (
     <div className="video-container">
-      <video className="video" autoPlay loop mute>
+      <video className="video" autoPlay loop muted>
         <source src="./assets/videos/home-video.webm" type="video/webm" />
       </video>
       <div className="video-text">
