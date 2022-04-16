@@ -1,6 +1,5 @@
-import React from "react";
-import { Outlet, Link } from "react-router-dom";
 import "./navbar.styles.scss";
+import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./sayad-store-logo.svg";
 
 const Navbar = () => {
@@ -24,6 +23,9 @@ const Navbar = () => {
             </Link>
             <Link className="navbar-link signin" to="./signin">
               Sign in
+            </Link>
+            <Link className="navbar-link cart" to="./cart">
+              Cart (0)
             </Link>
           </div>
         </div>
