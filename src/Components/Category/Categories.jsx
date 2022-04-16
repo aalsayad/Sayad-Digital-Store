@@ -12,6 +12,10 @@ const Categories = () => {
 
   return (
     <>
+      <div className="container">
+        <h2>BROWSE CATEGORIES</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit tempora aempt.</p>
+      </div>
       <div className="categories-container">{mappedCategories()}</div>
     </>
   );

@@ -10,6 +10,16 @@
   color: rgb(35, 35, 30);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --color-main: rgb(35, 35, 30);
+  --color-white: #fff;
+  --color-grey: rgb(245, 245, 245);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -39,5 +49,5 @@ h5 {
 }
 
 P {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
 }
