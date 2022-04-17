@@ -12,7 +12,7 @@ const Categories = () => {
 
   return (
     <>
-      <div className="container">
+      <div id="start-shopping" className="container">
         <h2>BROWSE CATEGORIES</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit tempora aempt.</p>
       </div>
