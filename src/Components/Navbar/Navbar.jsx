@@ -1,3 +1,4 @@
+import { scroller } from "react-scroll";
 import { useState } from "react";
 import "./navbar.styles.scss";
 import { Outlet, Link } from "react-router-dom";
@@ -12,11 +13,21 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+    scrollAnimation();
+  };
+
+  //!Smooth Scrolling
+  const scrollAnimation = () => {
+    scroller.scrollTo("top", {
+      duration: 1200,
+      smooth: "easeOutQuart",
+    });
   };
 
   return (
     <>
-      <nav id="top" className="navbar">
+      <div id="top"></div>
+      <nav className="navbar">
         <div className="navbar-container">
           <Link className="nav-logo" to="./" onClick={closeMobileMenu}>
             <Logo className="logo" />
