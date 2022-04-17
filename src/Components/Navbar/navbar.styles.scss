@@ -1,10 +1,4 @@
-// .navbar,
-// .navbar-container,
-// .nav-logo,
-// .navbar-link,
-// .navbar-link-wrapper {
-//   z-index: 999;
-// }
+$transition: all 0.25s ease-in-out;
 
 .navbar {
   width: 100vw;
@@ -94,9 +88,117 @@
   border-right: none;
 }
 
+.burger-menu-wrapper {
+  display: none;
+}
+
 //!Mobile View
 @media screen and(max-width: 935px) {
   .navbar-link-wrapper {
     display: none;
+  }
+  .burger-menu-wrapper--burger {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 100%;
+    opacity: 0.6;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      border-left: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--color-white);
+      opacity: 0.9;
+      transition: background 0.15s ease-in-out;
+    }
+
+    .burger__main-line {
+      transition: $transition;
+      margin-left: -0.3rem;
+      border-radius: 10px;
+      background-color: white;
+      height: 1px;
+      width: 35%;
+    }
+
+    .burger__main-line::before,
+    .burger__main-line::after {
+      transition: $transition;
+      border-radius: 10px;
+      display: block;
+      position: relative;
+      content: "";
+      background-color: rgb(255, 255, 255);
+      height: 1px;
+      width: 100%;
+    }
+
+    .burger__main-line::before {
+      content: "";
+      width: 120%;
+      top: -10px;
+    }
+
+    .burger__main-line::after {
+      top: 10px;
+      width: 120%;
+    }
+  }
+
+  .x {
+    .burger__main-line {
+      transition: $transition;
+      transform: translateX(-10px);
+      background-color: transparent;
+    }
+
+    .burger__main-line::before,
+    .burger__main-line::after {
+      transition: $transition;
+    }
+    .burger__main-line::before {
+      transform: translateX(17px) rotateZ(45deg) translateY(14px);
+    }
+
+    .burger__main-line::after {
+      transform: translateX(17px) rotateZ(-45deg) translateY(-14px);
+    }
+  }
+
+  .mobile {
+    display: none;
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    width: 100vw;
+    background-color: var(--color-main);
+    height: calc(100vh - 7rem);
+    display: flex;
+    flex-direction: column;
+
+    .navbar-link {
+      justify-content: start;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      width: 100%;
+      padding: 5rem 10vw;
+
+      &:hover::after {
+        opacity: 1;
+        transform: translateX(15px);
+      }
+
+      &::after {
+        opacity: 0.1;
+        position: absolute;
+        right: 10vw;
+        color: white;
+        margin-left: 2rem;
+      }
+    }
   }
 }

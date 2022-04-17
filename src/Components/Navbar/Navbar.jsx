@@ -1,20 +1,40 @@
+import { useState } from "react";
 import "./navbar.styles.scss";
 import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./sayad-store-logo.svg";
 
 const Navbar = () => {
-  console.log("NavBar Rendered");
+  //!Navbar mobile usestate toggle
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const toggleBurgerMenu = () => {
+    setMobileMenuOpen((prevValue) => !prevValue);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <>
-      <nav className="navbar">
+      <nav id="top" className="navbar">
         <div className="navbar-container">
-          <Link className="nav-logo" to="./">
+          <Link className="nav-logo" to="./" onClick={closeMobileMenu}>
             <Logo className="logo" />
             <h1>Sayad store</h1>
-            {/* <img className="logo" src="./assets/logo/sayad-store-logo.svg" /> */}
           </Link>
 
-          <div className="navbar-link-wrapper">
+          <div
+            className={
+              mobileMenuOpen ? "burger-menu-wrapper--burger x" : "burger-menu-wrapper--burger"
+            }
+            onClick={toggleBurgerMenu}
+          >
+            <div className="burger__main-line"></div>
+          </div>
+          <div
+            className={mobileMenuOpen ? "navbar-link-wrapper mobile" : "navbar-link-wrapper"}
+            onClick={closeMobileMenu}
+          >
             <Link className="navbar-link shop" to="./shop">
               Shop
             </Link>
