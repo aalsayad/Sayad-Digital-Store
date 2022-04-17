@@ -11,7 +11,7 @@ const Category = ({ title, subtitle, img, description, id }) => {
         style={{ backgroundImage: `url(${img})` }}
       ></div>
       <div className="category-body-container">
-        <h2>{title}</h2>
+        <h3>{title}</h3>
         <p>{subtitle}</p>
         <button className="btn btn--browse-category">
           {isMainCategory ? `${title} Items` : `Browse ${title}`}
