@@ -1,3 +1,5 @@
+import React from "react";
+import { useState, useEffect } from "react";
 import "./homevideo.styles.scss";
 import { ReactComponent as Logo } from "./sayad-store-logo.svg";
 
@@ -13,10 +15,28 @@ const scrollAnimation = () => {
 };
 
 const HomeVideo = () => {
+  //!Parallex Effect
+  const [offsetY, setOffsetY] = useState(0);
+  const handleScroll = () => setOffsetY(window.pageYOffset);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    //this is to remove the event listener after the component unloads
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <div className="video-container">
-        <video className="video" autoPlay loop muted playsInline>
+        <video
+          style={{ transform: `translateY(${offsetY * 0.6}px)` }}
+          className="video"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
           <source src="./assets/videos/sayad-store.mp4" type="video/mp4" />
         </video>
         <div className="video-text-container">
@@ -25,8 +45,11 @@ const HomeVideo = () => {
             <span className="strong--bold">Be Bold,</span>
             <br /> Be yourself.
           </h2>
-          <Link className="h2" onClick={scrollAnimation}>
-            <div className="video-text-cta">
+          <Link to="" className="h2" onClick={scrollAnimation}>
+            <div
+              className="video-text-cta"
+              style={{ transform: `translateY(${offsetY * -0.6}px)` }}
+            >
               <Logo className="arrow__down" />
               <h2>
                 <span className="strong--start"> Start</span> Shopping
