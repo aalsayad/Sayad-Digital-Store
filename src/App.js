@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import Navbar from "./Components/Navbar/Navbar";
-import Home from "./Components/Routes/Home";
-import Shop from "./Components/Routes/Shop";
-import Contact from "./Components/Routes/Contact";
-import SignIn from "./Components/Routes/SignIn";
+import Home from "./Components/_Routes/Home";
+import Shop from "./Components/_Routes/Shop";
+import Contact from "./Components/_Routes/Contact";
+import SignIn from "./Components/_Routes/SignIn";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
           <Route index={true} element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="signIn" element={<SignIn />} />
+          <Route path="signin" element={<SignIn />} />
         </Route>
       </Routes>
     </>

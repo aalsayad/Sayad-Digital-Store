@@ -1,6 +1,6 @@
 import React from "react";
-import Categories from "../../Components/Category/Categories";
-import HomeVideo from "../../Components/HomeVideo/HomeVideo";
+import Categories from "../Category/Categories";
+import HomeVideo from "../HomeVideo/HomeVideo";
 
 const Home = () => {
   return (

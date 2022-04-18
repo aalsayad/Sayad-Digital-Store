@@ -51,3 +51,8 @@ h5 {
 P {
   font-size: 1.6rem;
 }
+
+/* since navbar is fixed i worked around it by adding a div to account for the 7rems */
+.navbar-placeholder {
+  height: 7rem;
+}
