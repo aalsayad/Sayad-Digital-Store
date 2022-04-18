@@ -1,11 +1,14 @@
 import React from "react";
 import "./signinform.styles.scss";
-import { signInWithGooglePopup } from "../../Utilities/Firebase/Firebase.ulitities";
+import {
+  signInWithGooglePopup,
+  createUserDocumentFromAuth,
+} from "../../Utilities/Firebase/Firebase.ulitities";
 
 const SignInForm = () => {
   const logGoogleUser = async () => {
-    const response = await signInWithGooglePopup();
-    console.log(response);
+    const { user } = await signInWithGooglePopup();
+    createUserDocumentFromAuth(user);
   };
   return (
     <>
