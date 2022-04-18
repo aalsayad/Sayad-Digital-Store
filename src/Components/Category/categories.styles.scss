@@ -77,9 +77,6 @@
 
 //*BUTTONS*//
 .btn {
-  position: absolute;
-  bottom: 1rem;
-  bottom: 2rem;
   cursor: pointer;
   padding: 1.3rem;
   background-color: rgb(35, 35, 30);
@@ -89,16 +86,26 @@
   font-weight: 300;
 
   &::after {
+    opacity: 0.3;
     position: relative;
-    top: 1px;
     margin: 0 1rem 0 1.5rem;
     content: "❯";
     display: inline-block;
     color: rgb(224, 224, 224);
   }
+
+  &:hover::after {
+    opacity: 1;
+    margin-left: 27px;
+    transform: translateX(1px);
+    transition: all 0.35s ease-in-out;
+  }
 }
 
 .btn--browse-category {
+  position: absolute;
+  bottom: 1rem;
+  bottom: 2rem;
   margin-top: 3rem;
 }
 

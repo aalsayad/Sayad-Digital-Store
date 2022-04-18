@@ -1,0 +1,103 @@
+.form-title {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: absolute;
+  top: -1.5rem;
+  left: 5%;
+  z-index: 1;
+
+  &::after {
+    content: "";
+    background-color: var(--color-main);
+    display: block;
+    width: 110%;
+    height: 2px;
+    position: absolute;
+    top: 57%;
+    left: -4%;
+    z-index: -1;
+  }
+}
+
+.form--signup {
+  position: relative;
+  width: 35vw;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 5rem 2rem;
+  padding-top: 6.5rem;
+
+  form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    align-self: flex-start;
+    color: white;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1.5rem 2rem;
+    margin-bottom: 3rem;
+    font-family: "Barlow", sans-serif;
+    color: rgb(255, 255, 255);
+    letter-spacing: 1px;
+    font-size: 1.5rem;
+    font-weight: 200;
+    border-radius: 0;
+
+    &:focus {
+      outline: 1px solid rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.03);
+      transition: all 0.5s ease-in-out;
+    }
+  }
+}
+
+.btn--signup {
+  width: 30%;
+  position: static;
+  font-size: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.google {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.01);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.form-ctas {
+  width: 96.9%;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  p {
+    color: white;
+    opacity: 0.5;
+    font-size: 1.4rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+  }
+}

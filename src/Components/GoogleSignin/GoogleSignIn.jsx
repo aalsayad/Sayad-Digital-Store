@@ -1,22 +1,24 @@
 import React from "react";
-import "./signinform.styles.scss";
 import {
   signInWithGooglePopup,
   createUserDocumentFromAuth,
 } from "../../Utilities/Firebase/Firebase.ulitities";
 
-const SignInForm = () => {
+import { FaGoogle } from "react-icons/fa";
+
+const GoogleSignInForm = () => {
   const logGoogleUser = async () => {
     const { user } = await signInWithGooglePopup();
     createUserDocumentFromAuth(user);
   };
   return (
     <>
-      <div>
-        <button onClick={logGoogleUser}>Sign in with google</button>
-      </div>
+      <button className="btn btn--signup google" onClick={logGoogleUser}>
+        <FaGoogle style={{ fill: "white", marginRight: "2rem" }} />
+        Sign in with google
+      </button>
     </>
   );
 };
 
-export default SignInForm;
+export default GoogleSignInForm;

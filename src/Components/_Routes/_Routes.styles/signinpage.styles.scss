@@ -1,0 +1,13 @@
+.fullscreen-page--dark {
+  width: 100vw;
+  height: calc(100vh - 7rem);
+  margin-top: -1.2rem;
+  background-color: var(--color-main);
+  color: var(--color-white);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

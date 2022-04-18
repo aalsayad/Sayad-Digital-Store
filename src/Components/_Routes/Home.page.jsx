@@ -1,4 +1,3 @@
-import React from "react";
 import Categories from "../Category/Categories";
 import HomeVideo from "../HomeVideo/HomeVideo";
 
