@@ -27,13 +27,12 @@ const SignInForm = () => {
 
               <input type="password" required name="password" />
               <div className="btn btn--signup">Log In to your account</div>
-            </div>
-            <p> OR </p>
-            <div className="btn btn--signup google" onClick={logGoogleUser}>
-              <FaGoogle
-                style={{ fill: "white", marginRight: "1rem", position: "relative", top: "2px" }}
-              />
-              Log in with google
+              <div className="btn btn--signup google" onClick={logGoogleUser}>
+                <FaGoogle
+                  style={{ fill: "white", marginRight: "1rem", position: "relative", top: "2px" }}
+                />
+                Log in with google
+              </div>
             </div>
           </form>
         </div>

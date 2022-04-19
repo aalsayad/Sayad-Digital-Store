@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 8rem;
+  height: 5rem;
   width: 100%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   padding-left: 7.5%;
@@ -11,9 +11,10 @@
   h2 {
     text-align: start;
     color: white;
-    font-size: 2rem;
+    font-weight: 600;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
     text-transform: uppercase;
-    font-weight: 500;
   }
   p {
     line-height: rem;
@@ -24,17 +25,32 @@
   }
 }
 
+// keyframes & animation
+@keyframes scale-down {
+  0% {
+    max-width: 0;
+    max-height: 5rem;
+  }
+  50% {
+    max-width: 600px;
+    max-height: 5rem;
+  }
+  100% {
+    max-height: 100vh;
+  }
+}
+
 .form-container {
   overflow: hidden;
   animation-name: scale-down;
-  animation-duration: 1s;
-  animation-timing-function: ease-in;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier(0.33, 0.6, 0.68, 1);
   background-color: var(--color-main);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.15);
 
   .form-fields-container-signup {
-    padding: 4rem 0;
+    padding: 3rem 0;
   }
 
   form {
@@ -44,8 +60,7 @@
 
   label {
     display: block;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
     align-self: flex-start;
     color: white;
@@ -57,8 +72,8 @@
     width: 100%;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 1rem 2rem;
-    margin-bottom: 2rem;
+    padding: 1.1rem;
+    margin-bottom: 1.3rem;
     font-family: "Barlow", sans-serif;
     color: rgb(255, 255, 255);
     letter-spacing: 1px;
@@ -75,7 +90,7 @@
 }
 
 .btn--signup {
-  margin: 0 auto;
+  margin: 2rem auto 0.5rem auto;
   display: flex;
   justify-content: center;
   width: 100%;
@@ -83,7 +98,6 @@
   font-size: 1.4rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background-color: rgba(255, 255, 255, 0.05);
-  margin-top: 2.5rem;
   padding-left: 2rem;
 
   &:hover {
@@ -92,20 +106,5 @@
 
   &::after {
     margin-left: 1rem;
-  }
-}
-
-// keyframes & animation
-@keyframes scale-down {
-  0% {
-    max-width: 0;
-    max-height: 8rem;
-  }
-  50% {
-    max-width: 600px;
-    max-height: 8rem;
-  }
-  100% {
-    max-height: 100vh;
   }
 }

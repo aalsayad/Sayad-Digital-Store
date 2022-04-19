@@ -24,7 +24,7 @@ const SignupForm = () => {
     <>
       <div className="form-container form--signup">
         <div className="form-title">
-          <h2>Register a New Account</h2>
+          <h2>Register</h2>
         </div>
 
         <form className="form-fields-container-signup">

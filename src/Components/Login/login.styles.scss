@@ -6,15 +6,8 @@
 
 .form-fields-container-login {
   height: calc(100% - 8rem);
-  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  p {
-    color: white;
-    opacity: 0.4;
-    text-align: center;
-    margin-top: 2rem;
-  }
+  padding: 3rem 0;
 }
