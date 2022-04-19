@@ -1,3 +1,9 @@
+.form-container {
+  width: 75vw;
+  max-width: 600px;
+  overflow: hidden;
+}
+
 .form-title {
   display: flex;
   flex-direction: column;
@@ -28,10 +34,12 @@
 // keyframes & animation
 @keyframes scale-down {
   0% {
+    opacity: 0;
     max-width: 0;
     max-height: 5rem;
   }
-  50% {
+  40% {
+    opacity: 1;
     max-width: 600px;
     max-height: 5rem;
   }
@@ -43,8 +51,8 @@
 .form-container {
   overflow: hidden;
   animation-name: scale-down;
-  animation-duration: 1.2s;
-  animation-timing-function: cubic-bezier(0.33, 0.6, 0.68, 1);
+  animation-duration: 1.4s;
+  animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
   background-color: var(--color-main);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -106,5 +114,11 @@
 
   &::after {
     margin-left: 1rem;
+  }
+}
+
+@media screen and(max-width: 935px) {
+  .form-container {
+    width: 85vw;
   }
 }

@@ -7,19 +7,7 @@
   overflow: hidden;
 }
 
-@keyframes slide-in-top {
-  0% {
-    max-height: 0;
-  }
-  100% {
-    max-height: 100vh;
-  }
-}
-
 .video {
-  animation-name: slide-in-top;
-  animation-duration: 2.5s;
-  animation-timing-function: cubic-bezier(0.85, 0, 0.15, 1);
   filter: grayscale(0.7);
   opacity: 0.15;
   z-index: -1;
