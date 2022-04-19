@@ -30,25 +30,22 @@ const HomeVideo = () => {
   return (
     <>
       <div className="video-container">
-        <motion.video
+        <video
           style={{ transform: `translateY(${offsetY * 0.6}px)` }}
           className="video"
           autoPlay
           loop
           muted
           playsInline
-          animate={{ opacity: 0.15, width: "100%" }}
-          initial={{ opacity: 0, width: "0%" }}
-          transition={{ duration: 1.35, delay: 0.5, ease: "easeOut" }}
         >
           <source src="./assets/videos/sayad-store.mp4" type="video/mp4" />
-        </motion.video>
+        </video>
         <div className="video-text-container">
           <motion.div
             style={{ transform: `translateY(${offsetY * 5}px)` }}
             animate={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeInOut" }}
+            transition={{ duration: 0.8, delay: 0, ease: "easeInOut" }}
           >
             <h2>
               Be exclusive, <br />
@@ -63,7 +60,7 @@ const HomeVideo = () => {
               style={{ transform: `translateY(${offsetY * -0.6}px)` }}
               animate={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: -50 }}
-              transition={{ duration: 1.2, delay: 0.85, ease: "easeInOut" }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
             >
               <Logo className="arrow__down" />
               <h2>
