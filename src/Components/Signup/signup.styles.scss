@@ -1,36 +1,40 @@
 .form-title {
-  color: white;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  font-weight: 600;
-  position: absolute;
-  top: -1.5rem;
-  left: 5%;
-  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 8rem;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-left: 7.5%;
 
-  &::after {
-    content: "";
-    background-color: var(--color-main);
-    display: block;
-    width: 110%;
-    height: 2px;
-    position: absolute;
-    top: 57%;
-    left: -4%;
-    z-index: -1;
+  h2 {
+    text-align: start;
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  p {
+    line-height: 3rem;
+    color: white;
+    opacity: 0.9;
+    font-weight: 200;
+    font-size: 1.5rem;
   }
 }
 
-.form--signup {
-  position: relative;
-  width: 35vw;
+.form-container {
+  background-color: var(--color-main);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 5rem 2rem;
-  padding-top: 6.5rem;
+
+  .form-fields-container-signup {
+    padding: 4rem 0;
+  }
 
   form {
-    width: 90%;
+    width: 85%;
     margin: 0 auto;
   }
 
@@ -49,8 +53,8 @@
     width: 100%;
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 1.5rem 2rem;
-    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
     font-family: "Barlow", sans-serif;
     color: rgb(255, 255, 255);
     letter-spacing: 1px;
@@ -67,37 +71,22 @@
 }
 
 .btn--signup {
-  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   position: static;
   font-size: 1.4rem;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background-color: rgba(255, 255, 255, 0.05);
-}
-
-.google {
-  width: 45%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.01);
+  margin-top: 2.5rem;
+  padding-left: 2rem;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(255, 255, 255, 0.09);
   }
-}
 
-.form-ctas {
-  width: 96.9%;
-  margin-top: 2rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 0 auto;
-  p {
-    color: white;
-    opacity: 0.5;
-    font-size: 1.4rem;
-    font-weight: 200;
-    letter-spacing: 1px;
+  &::after {
+    margin-left: 1rem;
   }
 }

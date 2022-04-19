@@ -56,3 +56,7 @@ P {
 .navbar-placeholder {
   height: 7rem;
 }
+
+.ztop {
+  z-index: 1;
+}

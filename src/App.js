@@ -4,7 +4,7 @@ import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/_Routes/Home.page";
 import Shop from "./Components/_Routes/Shop.page";
 import Contact from "./Components/_Routes/Contact.page";
-import SignIn from "./Components/_Routes/SignIn.page";
+import Login from "./Components/_Routes/Login.page";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
           <Route index={true} element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="signin" element={<SignIn />} />
+          <Route path="account" element={<Login />} />
         </Route>
       </Routes>
     </>

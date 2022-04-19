@@ -94,7 +94,7 @@ $transition: all 0.25s ease-in-out;
   display: none;
 }
 
-//!Mobile View
+//! Tablet + Mobile View
 @media screen and(max-width: 935px) {
   .navbar-link-wrapper {
     width: 0;
@@ -208,9 +208,5 @@ $transition: all 0.25s ease-in-out;
         margin-left: 2rem;
       }
     }
-
-    // .cart {
-    //   border-bottom: transparent;
-    // }
   }
 }

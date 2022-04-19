@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import "./signup.styles.scss";
-import GoogleSignInForm from "../GoogleSignin/GoogleSignIn";
 
 const SignupForm = () => {
   const [formFields, setFormFields] = useState({
@@ -23,9 +22,12 @@ const SignupForm = () => {
 
   return (
     <>
-      <div className="form form--signup">
-        <h2 className="form-title">Sign Up with Email & Password</h2>
-        <form>
+      <div className="form-container form--signup">
+        <div className="form-title">
+          <h2>Register a New Account</h2>
+        </div>
+
+        <form className="form-fields-container-signup">
           <label>Display Name</label>
           <input
             type="string"
@@ -55,12 +57,8 @@ const SignupForm = () => {
             name="confirmedPassword"
             value={confirmedPassword}
           />
+          <div className="btn btn--signup">Sign up</div>
         </form>
-        <div className="form-ctas">
-          <button className="btn btn--signup">Sign up</button>
-          <p>OR </p>
-          <GoogleSignInForm />
-        </div>
       </div>
     </>
   );
