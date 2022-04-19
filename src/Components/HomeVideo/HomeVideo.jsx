@@ -58,7 +58,7 @@ const HomeVideo = () => {
             <motion.div
               className="video-text-cta"
               style={{ transform: `translateY(${offsetY * -0.6}px)` }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 0.6, y: 0 }}
               initial={{ opacity: 0, y: -50 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
             >
