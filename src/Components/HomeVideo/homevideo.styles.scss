@@ -10,10 +10,19 @@
 .video {
   filter: grayscale(0.7);
   opacity: 0.15;
-  z-index: -1;
+
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video-covering {
+  background-color: var(--color-main);
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
 }
 
 .video-text-container {
@@ -24,16 +33,18 @@
   justify-content: center;
   width: 100%;
   height: 90%;
-  z-index: 0;
 
-  h2 {
-    margin-bottom: 13rem;
-    text-transform: uppercase;
-    text-align: center;
-    color: white;
-    font-weight: 200;
-    font-size: 2rem;
-    line-height: 1.3;
+  .video-main-text {
+    span {
+      margin-bottom: 13rem;
+      text-transform: uppercase;
+      text-align: center;
+      color: white;
+      font-weight: 200;
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+
     .strong--bold {
       color: white;
       font-weight: 600;
@@ -56,13 +67,10 @@
     margin-bottom: 0rem;
     font-size: 1.4rem;
     letter-spacing: 3px;
-  }
-
-  .h2 {
+    text-transform: uppercase;
+    text-align: center;
     color: white;
-    margin-bottom: 0rem;
-    font-size: 1.4rem;
-    letter-spacing: 3px;
+    font-weight: 200;
   }
 
   .strong--start {

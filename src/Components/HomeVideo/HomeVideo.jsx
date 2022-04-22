@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import "./homevideo.styles.scss";
 import { ReactComponent as Logo } from "./sayad-store-logo.svg";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 //!Smooth Scrolling
 import { Link, scroller } from "react-scroll";
@@ -40,27 +40,36 @@ const HomeVideo = () => {
         >
           <source src="./assets/videos/sayad-store.mp4" type="video/mp4" />
         </video>
+        <motion.div
+          animate={{
+            y: "100%",
+            transition: { duration: 2, delay: 0.14, ease: [0.6, 0.2, 0.05, 0.9] },
+          }}
+          className="video-covering"
+        >
+          hi
+        </motion.div>
         <div className="video-text-container">
+          {/* //!This is where the main text of the gome screen lives */}
           <motion.div
-            style={{ transform: `translateY(${offsetY * 5}px)` }}
-            animate={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.8, delay: 0, ease: "easeInOut" }}
+            className="video-main-text"
+            style={{ transform: `translateY(${offsetY * -0.2}px)` }}
           >
-            <h2>
+            <span>
               Be exclusive, <br />
-              <span className="strong--bold">Be Bold,</span>
-              <br /> Be yourself.
-            </h2>
+            </span>
+            <span className="strong--bold">
+              Be Bold,
+              <br />
+            </span>
+            <span> Be yourself.</span>
           </motion.div>
 
-          <Link to="" className="h2" onClick={scrollAnimation}>
+          {/* //!This is where the CTA dropdown arrow lives */}
+          <Link to="" onClick={scrollAnimation}>
             <motion.div
               className="video-text-cta"
               style={{ transform: `translateY(${offsetY * -0.6}px)` }}
-              animate={{ opacity: 0.6, y: 0 }}
-              initial={{ opacity: 0, y: -50 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: "easeInOut" }}
             >
               <Logo className="arrow__down" />
               <h2>

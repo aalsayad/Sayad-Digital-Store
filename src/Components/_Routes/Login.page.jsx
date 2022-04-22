@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SignupForm from "../Signup/SignupForm";
-import SignInForm from "../Login/Login";
+import SignInForm from "../Login/LoginForm";
 import "./_Routes.styles/Loginpage.styles.scss";
 
 const SignIn = () => {

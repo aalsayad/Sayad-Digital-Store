@@ -4,7 +4,7 @@ import {
   createUserDocumentFromAuth,
 } from "../../Utilities/Firebase/Firebase.ulitities";
 import { FaGoogle } from "react-icons/fa";
-import "./login.styles.scss";
+import "./loginform.styles.scss";
 
 const SignInForm = () => {
   const logGoogleUser = async () => {
