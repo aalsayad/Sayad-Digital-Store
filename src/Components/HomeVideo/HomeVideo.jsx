@@ -15,6 +15,20 @@ const scrollAnimation = () => {
   });
 };
 
+//!Variants for Framer Motion
+const videoText = {
+  initial: { opacity: 0, y: 0 },
+  animate: {
+    opacity: 1,
+    y: -40,
+    transition: {
+      duration: 2,
+      ease: [0.43, 0.13, 0.23, 0.96],
+      staggerChildren: 0.2,
+    },
+  },
+};
+
 const HomeVideo = () => {
   //!Parallex Effect
   const [offsetY, setOffsetY] = useState(0);
@@ -31,7 +45,7 @@ const HomeVideo = () => {
     <>
       <div className="video-container">
         <video
-          style={{ transform: `translateY(${offsetY * 0.6}px)` }}
+          style={{ transform: `translateY(${offsetY * 0.8}px)` }}
           className="video"
           autoPlay
           loop
@@ -43,7 +57,7 @@ const HomeVideo = () => {
         <motion.div
           animate={{
             y: "100%",
-            transition: { duration: 2, delay: 0.14, ease: [0.6, 0.2, 0.05, 0.9] },
+            transition: { duration: 2.5, delay: 0.15, ease: [0.6, 0.2, 0.05, 0.9] },
           }}
           className="video-covering"
         >
@@ -53,23 +67,27 @@ const HomeVideo = () => {
           {/* //!This is where the main text of the gome screen lives */}
           <motion.div
             className="video-main-text"
-            style={{ transform: `translateY(${offsetY * -0.2}px)` }}
+            variants={videoText}
+            initial="initial"
+            animate="animate"
           >
-            <span>
-              Be exclusive, <br />
-            </span>
-            <span className="strong--bold">
-              Be Bold,
+            <motion.span variants={videoText}>
+              Be exclusive <br />
+            </motion.span>
+            <motion.span variants={videoText} className="strong--bold">
+              Be Bold
               <br />
-            </span>
-            <span> Be yourself.</span>
+            </motion.span>
+            <motion.span variants={videoText}> Be yourself</motion.span>
           </motion.div>
 
           {/* //!This is where the CTA dropdown arrow lives */}
           <Link to="" onClick={scrollAnimation}>
             <motion.div
               className="video-text-cta"
-              style={{ transform: `translateY(${offsetY * -0.6}px)` }}
+              initial={{ y: -30, opacity: 0, scale: 0.95 }}
+              animate={{ y: -10, opacity: 0.5, scale: 0.92 }}
+              transition={{ duration: 2, delay: 1.25, ease: [0.43, 0.13, 0.23, 0.96] }}
             >
               <Logo className="arrow__down" />
               <h2>

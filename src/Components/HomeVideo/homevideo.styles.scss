@@ -36,13 +36,13 @@
 
   .video-main-text {
     span {
-      margin-bottom: 13rem;
+      display: block;
       text-transform: uppercase;
       text-align: center;
       color: white;
       font-weight: 200;
       font-size: 2rem;
-      line-height: 1.3;
+      line-height: 1.5;
     }
 
     .strong--bold {
@@ -86,7 +86,7 @@
   }
 
   &:hover .arrow__down {
-    opacity: 0.4;
+    opacity: 1;
     animation: none;
     bottom: 1rem;
     transform: rotateZ(180deg);
@@ -95,7 +95,7 @@
 }
 
 .arrow__down {
-  opacity: 0.4;
+  opacity: 0.65;
   animation-name: bounce;
   animation-iteration-count: infinite;
   animation-duration: 3s;

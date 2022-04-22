@@ -1,35 +1,41 @@
-.fullscreen-page--dark {
-  z-index: -1;
-  width: 100vw;
-  min-height: calc(100vh - 7rem);
-  background-color: var(--color-main);
-}
-
-.flex-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.bg-img {
-  width: 100vw;
+.background-img-container {
+  position: absolute;
+  width: 100%;
   height: calc(100vh - 7rem);
-  position: fixed;
-  z-index: 0;
+  background-color: var(--color-main);
+  z-index: -3;
+}
+
+.background__img {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 7rem);
+  object-fit: cover;
   opacity: 0.05;
-  background-image: url("../../../../public/assets/images/hats-img.webp");
-  background-repeat: no-repeat;
-  background-size: cover;
+  z-index: -2;
+}
+
+.fullheight-container {
+  width: 100%;
+  height: calc(100vh - 7rem);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 100vw 100vw;
+  justify-items: center;
+  width: fit-content;
 }
 
 .under-form-cta {
   font-size: 1.3rem;
-  margin-top: 1.4rem;
+  margin-top: 2.5rem;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 1rem;
   font-weight: 300;
+  text-align: center;
 
   span {
     font-weight: 400;
