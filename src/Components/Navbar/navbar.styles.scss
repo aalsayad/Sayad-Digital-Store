@@ -171,11 +171,11 @@ $transition: all 0.25s ease-in-out;
       transition: $transition;
     }
     .burger__main-line::before {
-      transform: translateX(17px) rotateZ(45deg) translateY(14px) scale(0.77);
+      transform: translateX(17px) rotateZ(45deg) translateY(15px) scale(0.77);
     }
 
     .burger__main-line::after {
-      transform: translateX(17px) rotateZ(-45deg) translateY(-14px) scale(0.77);
+      transform: translateX(17px) rotateZ(-45deg) translateY(-15px) scale(0.77);
     }
   }
 
