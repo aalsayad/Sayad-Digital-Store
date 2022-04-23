@@ -21,7 +21,7 @@
   overflow: hidden;
 }
 
-.grid {
+.grid--1x2 {
   display: grid;
   grid-template-columns: 100vw 100vw;
   justify-items: center;

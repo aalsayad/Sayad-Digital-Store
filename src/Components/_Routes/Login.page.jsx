@@ -42,7 +42,7 @@ const SignIn = () => {
           <motion.div
             animate={formIsLogin ? { x: 0 } : { x: "-100vw" }}
             transition={{ duration: 1.15, ease: [0.6, 0.2, 0.05, 0.9] }}
-            className="grid"
+            className="grid--1x2"
           >
             <SignInForm />
             <SignupForm />

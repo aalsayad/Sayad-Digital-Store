@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./navbar.styles.scss";
 import { Outlet, Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./sayad-store-logo.svg";
+import Footer from "../Footer/Footer";
 
 const Navbar = () => {
   //!Navbar mobile usestate toggle
@@ -62,6 +63,7 @@ const Navbar = () => {
         </div>
       </nav>
       <Outlet />
+      <Footer />
     </>
   );
 };
