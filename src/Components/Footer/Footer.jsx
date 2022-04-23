@@ -1,45 +1,64 @@
-import React from "react";
+import { useState } from "react";
 import "./footer.styles.scss";
 import categoriesData from "../Category/categoriesData";
+import FooterSection from "./FooterSection";
 
 const Footer = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 935 ? true : false);
+
   return (
     <div className="footer">
       <div className="footer-content">
-        <div className="footer-section footer__shop">
-          <h5>Shop</h5>
-          <ul>
-            {categoriesData.map(({ title }) => {
-              return <li>{title}</li>;
-            })}
-          </ul>
-        </div>
-        <div className="footer-section footer__login">
-          <h5>Contact</h5>
+        <FooterSection
+          title="shop"
+          data={categoriesData}
+          displaytitle={true}
+          animatable={true}
+          defaultopen={true}
+        />
+        <FooterSection
+          title="contact"
+          displaytitle={true}
+          animatable={true}
+          defaultopen={!isMobile}
+        >
           <ul>
             <li>Get in touch</li>
             <li>Report a problem</li>
           </ul>
-        </div>
-        <div className="footer-section footer__account">
-          <h5>Account</h5>
+        </FooterSection>
+        <FooterSection
+          title="account"
+          displaytitle={true}
+          animatable={true}
+          defaultopen={!isMobile}
+        >
           <ul>
             <li>Login to your account</li>
             <li>Create a new account</li>
           </ul>
-        </div>
-        <div className="footer-section footer__socials">
-          <h5>Socials</h5>
+        </FooterSection>
+        <FooterSection
+          title="socials"
+          displaytitle={true}
+          animatable={true}
+          defaultopen={!isMobile}
+        >
           <ul>
-            <li>Instagram Icon</li>
-            <li>Facebook Icon</li>
-            <li>Twitter Icon</li>
-            <li>Tiktok Icon</li>
+            <li>Instagram</li>
+            <li>Facebook</li>
+            <li>Twitter</li>
+            <li>Tiktok</li>
           </ul>
-        </div>
-        <div className="footer-section footer__creator">
-          <h5>Designed & Developed by sayad.design</h5>
-        </div>
+        </FooterSection>
+        <FooterSection title="copyright" displaytitle={false} animatable={false}>
+          <h5>© 2022 Sayad Store, Inc. All Rights Reserved</h5>
+        </FooterSection>
+        <FooterSection title="creator" displaytitle={false} animatable={false}>
+          <h5>
+            Designed & Developed by <span>sayad.design</span>
+          </h5>
+        </FooterSection>
       </div>
     </div>
   );

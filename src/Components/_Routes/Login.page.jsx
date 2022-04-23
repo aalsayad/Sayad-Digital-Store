@@ -37,8 +37,8 @@ const SignIn = () => {
         className="background__img"
         src="./assets/images/background.webp"
       />
-      <div className="fullheight-container ztop">
-        <motion.div variants={floatUp} initial="initial" animate="animate" className="ztop">
+      <div className="fullheight-container">
+        <motion.div variants={floatUp} initial="initial" animate="animate">
           <motion.div
             animate={formIsLogin ? { x: 0 } : { x: "-100vw" }}
             transition={{ duration: 1.15, ease: [0.6, 0.2, 0.05, 0.9] }}
@@ -47,7 +47,7 @@ const SignIn = () => {
             <SignInForm />
             <SignupForm />
           </motion.div>
-          <h4 className="under-form-cta ztop">
+          <h4 className="under-form-cta">
             {formIsLogin ? "DONT HAVE AN ACCOUNT?" : "ALREADY REGISTERED?"}
             <span onClick={toggleForms} className="register-now-cta">
               {formIsLogin ? "REGISTER HERE" : "LOGIN TO YOUR ACCOUNT"}
