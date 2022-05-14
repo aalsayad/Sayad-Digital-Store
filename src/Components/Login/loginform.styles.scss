@@ -10,3 +10,28 @@
 .google {
   margin-top: 4rem;
 }
+
+.password-show-input {
+  position: relative;
+
+  .show-password-icon-holder {
+    position: absolute;
+    top: 4.2rem;
+    right: 1.8rem;
+
+    .show-password__icon {
+      fill: white;
+      transform: scale(2);
+      opacity: 0.45;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+        transition: all 0.15s ease-in-out;
+      }
+    }
+  }
+  input {
+    padding-right: 4.8rem;
+  }
+}

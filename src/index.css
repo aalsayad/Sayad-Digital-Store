@@ -16,6 +16,7 @@
 
 :root {
   --color-main: rgb(35, 35, 30);
+  --color-main-transparent: rgba(35, 35, 30, 0.75);
   --color-white: #fff;
   --color-grey: rgb(245, 245, 245);
 }
@@ -59,4 +60,13 @@ P {
 
 .ztop {
   z-index: 999;
+}
+
+/* general classes for position*/
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
 }
