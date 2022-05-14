@@ -13,7 +13,10 @@ const TextField = ({ label, ...props }) => {
         {...props}
       />
       {meta.touched && meta.error && <p className="x__icon absolute">✖</p>}
-      <p className="error">{<ErrorMessage name={field.name} />}</p>
+      <p className="error">
+        {meta.touched && meta.error && <span>✖</span>}
+        {<ErrorMessage name={field.name} />}
+      </p>
     </div>
   );
 };

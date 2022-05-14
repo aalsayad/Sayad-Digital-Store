@@ -11,7 +11,11 @@ const SignupForm = () => {
       .required("Please enter a username"),
     email: Yup.string().email("Email is invalid").required("Please enter an email"),
     password: Yup.string()
-      .min(6, "Must be 6 characters or more")
+      .min(8, "Must be 8 characters or more")
+      .matches(
+        /^(?=.*[0-9])(?=.*[!@#$%^&*()])[a-zA-Z0-9!@#$%^&()*]{8,99}$/,
+        "Password must contain atleast 1 number & 1 special character"
+      )
       .required("Please enter a password"),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), null], "Passwords doesn't match")
