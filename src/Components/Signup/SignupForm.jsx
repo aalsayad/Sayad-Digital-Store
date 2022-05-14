@@ -8,6 +8,7 @@ const SignupForm = () => {
     username: Yup.string()
       .max(15, "Must be 15 characters or less")
       .min(3, "Must be 3 characters or more")
+      .matches(/^[a-zA-Z0-9]{3,15}$/, "Username can't contain special characters")
       .required("Please enter a username"),
     email: Yup.string().email("Email is invalid").required("Please enter an email"),
     password: Yup.string()
@@ -38,7 +39,7 @@ const SignupForm = () => {
           <>
             <div className="form-container form--signup">
               <div className="form-title">
-                <h2>Register</h2>
+                <h2>Sign Up</h2>
               </div>
               <Form className="form-fields-container-signup">
                 <TextField label="Username" name="username" type="text" />
@@ -49,7 +50,7 @@ const SignupForm = () => {
                   className={`btn btn--signup ${!formik.isValid && "btn--disabled"}`}
                   type="submit"
                 >
-                  Sign up
+                  Create New Account
                 </button>
               </Form>
             </div>
