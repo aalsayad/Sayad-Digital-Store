@@ -2,8 +2,16 @@ import "./signup.styles.scss";
 import TextField from "./TextField.component";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import {
+  createAuthUserWithEmailAndPassword,
+  createUserDocumentFromAuth,
+} from "../../Utilities/Firebase/Firebase.ulitities";
+import { useState } from "react";
+import Loader from "../../Utilities/Loader/Loader.component";
+import { FaCheck } from "react-icons/fa";
 
 const SignupForm = () => {
+  //!Setting up the validation using Yup
   const validate = Yup.object({
     username: Yup.string()
       .max(15, "Must be 15 characters or less")
@@ -23,6 +31,12 @@ const SignupForm = () => {
       .required("Please confirm your password"),
   });
 
+  //!Error Message
+  const [errorResponseMessage, setErrorResponseMessage] = useState("");
+
+  //!Loading State
+  const [isLoading, setIsLoading] = useState(false);
+  const [accountCreated, setAccountCreated] = useState(false);
   return (
     <div>
       <Formik
@@ -33,7 +47,32 @@ const SignupForm = () => {
           confirmPassword: "",
         }}
         validationSchema={validate}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={async (values, { resetForm }) => {
+          try {
+            setIsLoading(true);
+            const { user } = await createAuthUserWithEmailAndPassword(
+              values.email,
+              values.password
+            );
+            await createUserDocumentFromAuth(user, { displayName: values.username });
+            //Second parameter to populate "DisplayName" in userDocument in Firebase
+            //Check firebase.utilities.jsx line 36
+            // resetForm();
+            setAccountCreated(true);
+            setErrorResponseMessage("");
+          } catch (error) {
+            switch (error.code) {
+              case "auth/email-already-in-use":
+                setErrorResponseMessage("Email is already in use.");
+                setIsLoading(false);
+                break;
+              default:
+                setErrorResponseMessage("Encountered an error during user creation.");
+                setIsLoading(false);
+                console.log(error);
+            }
+          }
+        }}
       >
         {(formik) => (
           <>
@@ -41,17 +80,36 @@ const SignupForm = () => {
               <div className="form-title">
                 <h2>Sign Up</h2>
               </div>
+              {errorResponseMessage && (
+                <div className="response-message relative">
+                  <p>{errorResponseMessage}</p>
+                  <span className="absolute x__icon--response-message">✖</span>
+                </div>
+              )}
               <Form className="form-fields-container-signup">
                 <TextField label="Username" name="username" type="text" />
                 <TextField label="Email" name="email" type="email" />
                 <TextField label="Password" name="password" type="password" />
                 <TextField label="Confirm Password" name="confirmPassword" type="password" />
-                <button
-                  className={`btn btn--signup ${!formik.isValid && "btn--disabled"}`}
-                  type="submit"
-                >
-                  Create New Account
-                </button>
+                {!isLoading && (
+                  <button
+                    className={`btn btn--signup ${!formik.isValid && "btn--disabled"}`}
+                    type="submit"
+                  >
+                    Create New Account
+                  </button>
+                )}
+                {isLoading && (
+                  <button className="btn btn--loader" type="button">
+                    {!accountCreated && <Loader />}
+                    {accountCreated && (
+                      <>
+                        Account Created
+                        <FaCheck fill="white" opacity="0.4" style={{ marginLeft: "1rem" }} />
+                      </>
+                    )}
+                  </button>
+                )}
               </Form>
             </div>
           </>

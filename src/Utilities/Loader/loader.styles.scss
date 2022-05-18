@@ -1,0 +1,26 @@
+.logo--loader {
+  width: 1.65rem;
+  height: fit-content;
+  svg {
+    path {
+      fill: none;
+      stroke: white;
+      stroke-width: 1.5rem;
+    }
+  }
+  animation-name: rotate-loader;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+  margin-right: 2rem;
+}
+
+//*Animation
+@keyframes rotate-loader {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
