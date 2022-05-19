@@ -33,6 +33,9 @@ const SignupForm = () => {
 
   //!Error Message
   const [errorResponseMessage, setErrorResponseMessage] = useState("");
+  const closeError = () => {
+    setErrorResponseMessage("");
+  };
 
   //!Loading State
   const [isLoading, setIsLoading] = useState(false);
@@ -54,9 +57,9 @@ const SignupForm = () => {
               values.email,
               values.password
             );
-            await createUserDocumentFromAuth(user, { displayName: values.username });
             //Second parameter to populate "DisplayName" in userDocument in Firebase
             //Check firebase.utilities.jsx line 36
+            await createUserDocumentFromAuth(user, { displayName: values.username });
             // resetForm();
             setAccountCreated(true);
             setErrorResponseMessage("");
@@ -83,7 +86,9 @@ const SignupForm = () => {
               {errorResponseMessage && (
                 <div className="response-message relative">
                   <p>{errorResponseMessage}</p>
-                  <span className="absolute x__icon--response-message">✖</span>
+                  <span onClick={closeError} className="absolute x__icon--response-message">
+                    ✖
+                  </span>
                 </div>
               )}
               <Form className="form-fields-container-signup">
