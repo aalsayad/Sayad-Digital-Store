@@ -47,6 +47,7 @@ const LoginForm = () => {
               values.email,
               values.password
             );
+            resetForm();
             setErrorResponseMessage("");
           } catch (error) {
             switch (error.code) {

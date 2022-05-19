@@ -10,7 +10,7 @@ import { useState } from "react";
 import Loader from "../../Utilities/Loader/Loader.component";
 import { FaCheck } from "react-icons/fa";
 
-const SignupForm = () => {
+const SignupForm = ({ redirect }) => {
   //!Setting up the validation using Yup
   const validate = Yup.object({
     username: Yup.string()
@@ -60,9 +60,10 @@ const SignupForm = () => {
             //Second parameter to populate "DisplayName" in userDocument in Firebase
             //Check firebase.utilities.jsx line 36
             await createUserDocumentFromAuth(user, { displayName: values.username });
-            // resetForm();
+            resetForm();
             setAccountCreated(true);
             setErrorResponseMessage("");
+            redirect(true);
           } catch (error) {
             switch (error.code) {
               case "auth/email-already-in-use":

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SignupForm from "../Signup/SignupForm";
 import SignInForm from "../Login/LoginForm";
 import "./_Routes.styles/Loginpage.styles.scss";
@@ -45,7 +45,7 @@ const SignIn = () => {
             className="grid--1x2"
           >
             <SignInForm />
-            <SignupForm />
+            <SignupForm redirect={setFormIsLogin} />
           </motion.div>
           <h4 className="under-form-cta">
             {formIsLogin ? "DONT HAVE AN ACCOUNT?" : "ALREADY REGISTERED?"}
